@@ -5,7 +5,7 @@ Fit 4 for Fitness
 Wellness website that will search API's to find closest exercise classes. 
 
 # Project Mockup:
-<!-- ![password generator homework demo](./screenshots/) -->
+![mock up](./assets/mockup.JPG)
 
 # Team members and responsibilities:
 Hanna: Javascript, API
