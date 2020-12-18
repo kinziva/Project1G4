@@ -5,9 +5,9 @@ Fit 4 for Fitness
 Wellness website that will search API's to find closest exercise classes. 
 
 # Project Mockup:
-![mock up](./assets/mockup1.JPG)
-![mock up](./assets/mockup2.JPG)
-![mock up](./assets/mockup3.JPG)
+![mock up](./assets/mockup.png)
+![mock up](./assets/mockup2.png)
+![mock up](./assets/mockup3.png)
 
 # Team members and responsibilities:
 Hanna: Javascript, API
