@@ -1,36 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<link rel="stylesheet" href ='style.css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wellness</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+
+  <link rel="stylesset" href= "reset.css">
+  <link rel="stylesheet" href='style.css'>
 </head>
 
 <body>
-    <div class="row">
-        <div class="col m12"> <img class="responsive-img" src="./assets/mockup1.png"></div>
-      </div>
-    
-      <h2>Choose Your Fitness </h2>
-<p> Stay Fit.......dummy text </p>
+  <div class="row">
+    <div class="col m12" id="imageone"> <img class="responsive-img" src="./assets/mockup1.png"></div>
+  </div>
 
-<div class="row">
-  <div class="column">
-    <img src="./assets/yoga.jpg" alt="Yoga" style="width:100%">
+  <h2>Choose Your Fitness </h2>
+  <p> Stay Fit.......dummy text </p>
+
+  <div class="row">
+    <div class="column">
+      <img src="./assets/yoga.jpg" alt="Yoga" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="./assets/pilates.jpg" alt="Pilates" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="./assets/meditation.jpg" alt="Meditation" style="width:100%">
+    </div>
   </div>
-  <div class="column">
-    <img src="./assets/pilates.jpg" alt="Pilates" style="width:100%">
+  <div class="containerTwo">
+    <div class="row">
+      <div class="col-md-3">
+        <h3>Search for a City</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+            <input type="text" placeholder="Search.." name="search2"> <button type="submit"><i
+                class="fa fa-search"></i></button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+  <div class="ui disabled icon input">
+    <i class="search icon"></i>
+    <input type="text" placeholder="Search...">
   </div>
-  <div class="column">
-    <img src="./assets/meditation.jpg" alt="Meditation" style="width:100%">
-  </div>
-</div>
-<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-  <i class="material-icons right">send</i>
-</button>
-        
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+      <div class="ui compact menu">
+        <div class="input-group input-group-lg mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">City</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="New York City" id="rest-city">
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-primary" type="text" placeholder="Primary input">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-info" type="text" placeholder="Info input">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" type="text" placeholder="Success input">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-warning" type="text" placeholder="Warning input">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-danger" type="text" placeholder="Danger input">
+          </div>
+        </div>
+    
+  
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+      <script src="semantic/dist/semantic.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>

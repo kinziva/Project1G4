@@ -1,6 +1,5 @@
 body
 {
-background-color: palegoldenrod;
 
 }
 
@@ -25,4 +24,10 @@ padding-left:  1%;;
    content: "";
    clear: both;
    display: table;
+ }
+ #imagone
+  {
+width: 1000px;
+height: 500px;
+
  }
