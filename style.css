@@ -1,5 +1,33 @@
-.mainpic 
+body
 {
-    
 
 }
+
+
+#pictwo {
+height: 500px;
+width : 500px;
+padding-left:  1%;;
+
+}
+
+
+ 
+ .column {
+   float: left;
+   width: 33.33%;
+   padding: 5px;
+ }
+ 
+ /* Clearfix (clear floats) */
+ .row::after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+ #imagone
+  {
+width: 1000px;
+height: 500px;
+
+ }

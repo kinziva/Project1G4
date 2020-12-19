@@ -1,5 +1,6 @@
 // Created by Hanna 12/15/2020
 
+
 $("#search").on("click", function(event) {
     // This line allows us to take advantage of the HTML "submit" property
     // This way we can hit enter on the keyboard and it registers the search
@@ -80,4 +81,5 @@ $("#search").on("click", function(event) {
   return queryURL + $.param(queryParams);
 
   }
+
 
