@@ -30,7 +30,7 @@ $("#search").on("click", function(event) {
   function clear() {
     $("#search-section").empty();
   }
-
+});
 //build QUERY url
   function buildQueryURL() {
 
@@ -82,4 +82,32 @@ $("#search").on("click", function(event) {
 
   }
 
+  // Created by Mengyue 12/19/2020
+
+$("#bmi-btn").on("click", function(event) {
+  event.preventDefault();
+  bmiCalculator();
+// bmi calculator
+function bmiCalculator() {
+  var age = $("#bmi-age").val();
+  var weight = $("#bmi-weight").val();
+  var height = $("#bmi-height").val();
+  console.log(age,weight,height);
+  // queryURL for bmi API 
+  var queryURLBmi = "https://fitness-calculator.p.rapidapi.com/bmi?age="+age+"&weight="+weight+"&height="+height;
+  //ajax 
+  $.ajax({
+    url: queryURLBmi,
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "6d01ea40d8msh0e3a90c20c5f4e7p1a74a4jsn9c524a72b90a",
+      "x-rapidapi-host": "fitness-calculator.p.rapidapi.com"
+    }
+  }).then(function(response) {
+      console.log(response);
+
+});
+}
+
+});
 
