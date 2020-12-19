@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Mulish&display=swap" rel="stylesheet">
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <title>Stay Well</title>
+</head>
+
+<body>
+    <header>
+        <div class="container text-center heading">
+            <h1 class="display-4">Be FIT</h1>
+            <p class="lead">Be Healty</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- WELLNESS PLACE GENERATOR -->
+        <div class="wellnessPlace" id="wellnessPlace">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5 text-center">
+                    <h3 class="wellnessPlace-header">Let's find some place to get Healty</h3>
+                </div>
+            </div>
+
+            <div class="col-md-6  wellnessPlace-inputs">
+
+                <!-- City Input -->
+                <div class="input-group input-group-lg mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">City</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+                        placeholder="DC" id="place-city">
+                </div>
+
+
+                <!-- Radius Input -->
+                <div class="input-group input-group-lg mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Radius</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+                        placeholder="miles" id="rest-radius">
+                </div>
+
+                <!-- Wellness Option -->
+                <div class="input-group input-group-lg mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Wellness Place</label>
+                    </div>
+                    <select class="custom-select" id="dropDownWellness">
+                        <option selected value="choose">Select...</option>
+                        <option value="Gym">Gym</option>
+                        <option value="Yogo Studio">Yogo Studio</option>
+                        <option value="Spa">Spa</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurant button -->
+        <div class="text-center btn-row">
+            <button type="button" class="btn btn-lg place-btn" id="place-btn">Find My Place</button>
+        </div>
+        <div id="places">
+            <div class="row justify-content-between places-row"></div>
+
+        </div>
+        </div>
+
+
+
+        <footer class="footer nav sticky-bottom justify-content-center">
+            Project 1 Group 4
+        </footer>
+
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- Local Script -->
+        <script src="javascript.js"></script>
+</body>
+
+</html>
