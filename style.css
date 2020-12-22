@@ -1,6 +1,12 @@
 body
 {
-
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+  text-shadow: 3px 3px 3px #ababab;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPf4snAo5QQx4E_hxjemEfe3DPyNs1g8vsSw&usqp=CAU");
 }
 
 
@@ -31,3 +37,58 @@ width: 1000px;
 height: 500px;
 
  }
+
+ #optionsForCls
+ {
+  float: left;
+  width: 30%;
+  padding: 5px;
+
+
+ }
+
+ #imageone
+ {
+width: 2000px;
+
+ }
+ /* style for forms*//
+ 
+ label  {
+  width: 30%;
+  
+}
+
+input[type=submit] {
+  width: 40%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 08px;
+  border: beige;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=Clear] {
+  width: 40%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 8px;
+  border: beige;
+  border-radius: 3px;
+  cursor: pointer;
+}   
+p {
+text-align: center;
+
+}
+h2{
+  text-align: center;
+
+}
