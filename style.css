@@ -7,6 +7,7 @@ body
   font-size: 30px;
   text-shadow: 3px 3px 3px #ababab;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPf4snAo5QQx4E_hxjemEfe3DPyNs1g8vsSw&usqp=CAU");
+  color : firebrick
 }
 
 
@@ -61,34 +62,58 @@ width: 2000px;
 
 input[type=submit] {
   width: 40%;
-  background-color: #4CAF50;
+  background-color: firebrick;
   color: white;
   padding: 14px 20px;
   margin: 8px 08px;
-  border: beige;
+  border:firebrick;
   border-radius: 4px;
   cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: firebrick
 }
-
-input[type=Clear] {
+input[type=reset] {
   width: 40%;
-  background-color: #4CAF50;
+  background-color: firebrick;
   color: white;
   padding: 14px 20px;
-  margin: 8px 8px;
-  border: beige;
-  border-radius: 3px;
+  margin: 8px 08px;
+  border: firebrick;
+  border-radius: 4px;
   cursor: pointer;
-}   
+}
+input[type=reset]:hover {
+  background-color: firebrick
+}
+
+h1{
+  text-align: center;
+  text-decoration: underline;
+  color:firebrick
+  
+
+}  
 p {
 text-align: center;
+color : firebrick
 
 }
 h2{
   text-align: center;
+  color : firebrick
 
+}
+
+
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200%;
+   text-decoration: underline;
 }
