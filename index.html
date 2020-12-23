@@ -56,53 +56,63 @@
 
         </select>
       </form>
+      <div class="row">
 
 
+      <div id="optionsForCls" class="input-group mb-3">
+        <select class="form-select" id="inputGroupSelect02">
+          <option selected>Choose your fintess style </option>
+          <option value="1">Yoga Studio</option>
+          <option value="2">Pilates</option>
+          <option value="3">Gym</option>
+          <option value="4">Meditation Center</option>
+        </select>
+
+
+        <label class="input-group-text" for="inputGroupSelect02">Options</label>
+      </div>
     </div>
+
+    <!-- search buttons -->
+      <div class="row">
+      <input type="submit" value="Submit" id="place-btn"> <input type="reset" value="Reset">
+    </div>
+    </div>
+
+    <!-- search output -->
+
     <div class="col-md-4"></div>
+
+
+    <!--BMI -->
+
     <div class="col-md-4">
       <h1> BMI Calculator </h1>
       <form  action="/action_page.php">
        
-        <input  type="text" id="age" name="age" placeholder="Enter Your Age">
+        <input  type="text" id="bmi-age" name="age" placeholder="Enter Your Age">
 
       
-        <input  type="text" id="weight" name="weight" placeholder="Enter your weight in Lbs ">
+        <input  type="text" id="bmi-weight" name="weight" placeholder="Enter your weight in Lbs ">
         
-        <input type="text" id="height" name="height" placeholder="Enter your Height">
+        <input type="text" id="bmi-height" name="height" placeholder="Enter your Height">
 
+        <input type="text" id="bmi-result" name="BmiResult" placeholder="">
 
         </select>
       </form>
-    </div>
-    <div class="row">
-      <div class="clo-md-4">
-        <div id="optionsForCls" class="input-group mb-3">
-          <select class="form-select" id="inputGroupSelect02">
-            <option selected>Choose your fintess style </option>
-            <option value="1">Yoga Studio</option>
-            <option value="2">Pilates</option>
-            <option value="3">Gym</option>
-            <option value="4">Meditation Center</option>
-          </select>
+      <div class="row">
 
-
-          <label class="input-group-text" for="inputGroupSelect02">Options</label>
-        </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
-          <input type="submit" value="Submit"> <input type="reset" value="Reset">
-        </div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-          <input type="submit" value="Submit"> <input type="reset" value="Reset">
-        </div>
-
-      </div>
+      <input type="submit" value="Submit" id="bmi-btn"> <input type="reset" value="Reset">
     </div>
   </div>
 
+
+
+
+
   </div>
 
   </div>
@@ -116,10 +126,23 @@
 
 
 
+  <footer class="footer nav sticky-bottom justify-content-center">
+    Project 1 Group 4
+</footer>
 
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"  src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    
+  <script src="./javascript.js"></script>  
+
+
+  <!-- Local Script -->
+
+
 </body>
 
 </html>
