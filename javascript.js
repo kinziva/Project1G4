@@ -1,11 +1,9 @@
-//  original place call "https://api.foursquare.com/v2/venues/search?client_id=X3VSLYNVJXHUU2SM3CEVP5YLSO4SHPVJDGBCUNSP554LFE3I&client_secret=P1M2Y1HRN23WODIQ4XZJ3ZRVSHOVHB0CUJQ5PK4A1V2VKHVD&near=fairfax&intent=browse&radius=50&query=yoga studio&limit=10&v=20200101";
-
 $(document).ready(function () {
   //variables
   const apiKey =
-    "client_id=X3VSLYNVJXHUU2SM3CEVP5YLSO4SHPVJDGBCUNSP554LFE3I&client_secret=P1M2Y1HRN23WODIQ4XZJ3ZRVSHOVHB0CUJQ5PK4A1V2VKHVD";
+    "client_id=X3VSLYNVJXHUU2SM3CEVP5YLSO4SHPVJDGBCUNSP554LFE3I&client_secret=P1M2Y1HRN23WODIQ4XZJ3ZRVSHOVHB0CUJQ5PK4A1V2VKHVD&v=20200101";
 
-
+  //find place with event listener submit button click
   $("#place-btn").on("click", function (event) {
     event.preventDefault();
 
@@ -13,29 +11,19 @@ $(document).ready(function () {
 
   });
 
-  //place finder function
+  //place finder function creates the query and makes the api call 
   function placeFinder() {
     var city = $("#city").val();
     console.log("city:    " + city);
-
-    var radius = $("#radius").val();
-    console.log("radius:    " + radius);
 
     var select = $("#inputGroupSelect02").val();
 
     console.log("select:    " + select);
 
-    // queryURL for bmi API
+    // queryURL for places API --by category id: "4bf58dd8d48988d175941735" Gym / Fitness Center
     var queryURL =
-      "https://api.foursquare.com/v2/venues/search?" +
-      apiKey +
-      "&near=" +
-      city +
-      "&intent=browse&radius=" +
-      radius +
-      "&query=" +
-      select +
-      "&limit=10&v=20200101";
+      "https://api.foursquare.com/v2/venues/search?" + apiKey + "&near=" + city +
+      "&intent=browse&query=" + select + "&categoryId=4bf58dd8d48988d175941735";
 
     console.log("queryURL: " + queryURL);
 
@@ -44,34 +32,61 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
 
-      console.log("response:   " + JSON.stringify(response));
-      console.log("response.response:    " + JSON.stringify(response.response));
+      displayPlaces(response);
 
-      console.log(
-        "response.response.venues  " + JSON.stringify(response.response.venues)
-      );
-
-      console.log(
-        "response.response.venues[0]  " +
-          JSON.stringify(response.response.venues[0])
-      );
-
-      //  console.log("name:     " + JSON.stringify(response.response.venues[0].name));
-
-      console.log(
-        "adress:     " +
-          JSON.stringify(response.response.venues[0].location.address)
-      );
-      console.log(
-        "city:     " + JSON.stringify(response.response.venues[0].location.city)
-      );
-      console.log(
-        "postalCode:     " +
-          JSON.stringify(response.response.venues[0].location.postalCode)
-      );
     });
+  }
+
+  //displace places info
+  function displayPlaces(response) {
+    console.log(" in displayPlaces ");
+
+    console.log(response);
+    console.log(response.response);
+    console.log(response.response.venues);
+
+    const placeDisplay = document.querySelectorAll(".place");
+    console.log("place: count :  " + placeDisplay.length);
+
+    for (i = 0; i < placeDisplay.length; i++) {
+
+      placeDisplay[i].innerHTML = "";
+
+      // place name
+      var searchedPlaceName = document.createElement("p");
+      searchedPlaceName.setAttribute("class", "mt-3 mb-0 placeName");
+      searchedPlaceName.innerHTML = response.response.venues[i].name;
+      placeDisplay[i].append(searchedPlaceName);
+
+
+      // place address
+      var searchedPlaceaddress = document.createElement("p");
+      searchedPlaceaddress.setAttribute("alt", "placeAddress");
+      searchedPlaceaddress.innerHTML = "Address: " + response.response.venues[i].location.formattedAddress;
+      placeDisplay[i].append(searchedPlaceaddress);
+
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////
+    // following items not common for all places not in use for now
+
+    // place city
+    //   var searchedPlaceCity = document.createElement("p");
+    //   searchedPlaceCity.text = " City: " +response.response.venues[0].location.city;
+    //   placeDisplay.append(searchedPlaceCity);
+
+    //  // place state
+    //   var searchedPlaceState= document.createElement("p");
+    //   searchedPlaceState.innerHTML =" State: " +response.response.venues[0].location.state;
+    //   placeDisplay.append(searchedPlaceState);
+
+    //    // place zip
+    //   var searchedPlaceZIP = document.createElement("p");
+    //   searchedPlaceZIP.innerHTML = " PostalCode: "+ response.response.venues[0].location.postalCode;
+    //   placeDisplay.append(searchedPlaceZIP);
+
   }
 
   //BMI Calculator
