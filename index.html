@@ -46,38 +46,39 @@
       <h1>Choose your Fitness Destination</h1>
       <form action="/action_page.php">
        
-        <input type="text" id="city" name="city" placeholder="Enter City Name">
+        <input type="text" id="city"  placeholder="Enter City Name">
 
       
-        <input type="text" id="state" name="statename" placeholder="Enter your State ">
+        <input type="text" id="state" placeholder="Enter your State ">
        
-        <input type="text" id="radius" name="radius" placeholder="Enter Radius">
-
-
-        </select>
-      </form>
-      <div class="row">
+        <input type="text" id="radius"  placeholder="Enter Radius">
 
 
       <div id="optionsForCls" class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect02">Options</label>
         <select class="form-select" id="inputGroupSelect02">
           <option selected>Choose your fintess style </option>
-          <option value="1">Yoga Studio</option>
-          <option value="2">Pilates</option>
-          <option value="3">Gym</option>
-          <option value="4">Meditation Center</option>
+          <option value="Yoga Studio">Yoga Studio</option>
+          <option value="Pilates">Pilates</option>
+          <option value="Gym">Gym</option>
+          <option value="Meditation Center">Meditation Center</option>
         </select>
 
-
-        <label class="input-group-text" for="inputGroupSelect02">Options</label>
       </div>
-    </div>
+      <!-- select div ends -->
+      </form>
 
-    <!-- search buttons -->
-      <div class="row">
-      <input type="submit" value="Submit" id="place-btn"> <input type="reset" value="Reset">
+    <div>
+          <!-- search buttons -->
+          <input type="submit" value="Submit" id="place-btn"> <input type="reset" value="Reset">
+        </div>
+
+
     </div>
-    </div>
+    <!-- col ends -->
+
+
+
 
     <!-- search output -->
 
