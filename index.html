@@ -16,16 +16,17 @@
 
 <body>
   <div class="row">
-    <div  id="imageone"> <img class="responsive-img" src="https://secureservercdn.net/160.153.138.53/4e1.6d6.myftpupload.com/wp-content/uploads/2016/05/healthh.jpg" alt="mainimage"
-        style="height: 600px; width:100%">
-        <div class="centered">Wellness Finder </div>
-       
+    <div id="imageone"> <img class="responsive-img"
+        src="https://secureservercdn.net/160.153.138.53/4e1.6d6.myftpupload.com/wp-content/uploads/2016/05/healthh.jpg"
+        alt="mainimage" style="height: 600px; width:100%">
+      <div class="centered">Wellness Finder </div>
+
     </div>
   </div>
-<h1>Keep Fit</h1>
-<br>
+  <h1>Keep Fit</h1>
+  <br>
   <h2>We hlep you to stay fit. Choose Your Fitness Destination </h2>
-  <p> Calcuate your BMI . Find the fintness place near you.  </p>
+  <p> Calcuate your BMI . Find the fintness place near you. </p>
   <br>
 
   <div class="row">
@@ -39,62 +40,74 @@
       <img src="./assets/meditation.jpg" alt="Meditation" style="width:100%">
     </div>
   </div>
+  <!-- 3images banneer ends -->
   <br>
   <!-- This is for finding fitness area -->
   <div class="row">
     <div class="col-md-4">
       <h1>Choose your Fitness Destination</h1>
       <form action="/action_page.php">
-       
-        <input type="text" id="city" name="city" placeholder="Enter City Name">
 
-      
-        <input type="text" id="state" name="statename" placeholder="Enter your State ">
-       
-        <input type="text" id="radius" name="radius" placeholder="Enter Radius">
+        <input type="text" id="city" placeholder="Enter City Name">
+        <!-- <input type="text" id="state" placeholder="Enter your State "> -->
+        <!-- <input type="text" id="radius" placeholder="Enter Radius"> -->
+        <br>
+        <br>
+        <br>
+
+        <div id="optionsForCls" class="input-group mb-3">
+
+          <select class="form-select" id="inputGroupSelect02">
+            <option selected>Choose your fintess style </option>
+            <option value="Yoga">Yoga Studio</option>
+            <option value="Pilates">Pilates</option>
+            <option value="Gym">Gym</option>
+            <option value="Weight Loss Centers">Weight Loss Centers</option>
+          </select>
+          <br>
+          <label class="input-group-text" for="inputGroupSelect02">Options</label>
+        </div>
+        <!-- select div ends -->
+        <br>
+        <br>
+        <br>
 
 
-        </select>
+        <!-- search buttons -->
+
+        <input type="submit" value="Submit" id="place-btn">
+        <input type="reset" value="Reset" id="place-reset">
+
+
       </form>
-      <div class="row">
 
-
-      <div id="optionsForCls" class="input-group mb-3">
-        <select class="form-select" id="inputGroupSelect02">
-          <option selected>Choose your fintess style </option>
-          <option value="1">Yoga Studio</option>
-          <option value="2">Pilates</option>
-          <option value="3">Gym</option>
-          <option value="4">Meditation Center</option>
-        </select>
-
-
-        <label class="input-group-text" for="inputGroupSelect02">Options</label>
-      </div>
     </div>
+    <!-- find place col ends -->
 
-    <!-- search buttons -->
-      <div class="row">
-      <input type="submit" value="Submit" id="place-btn"> <input type="reset" value="Reset">
+
+
+    <!-- search output  for places -->
+
+    <div class="col-md-4 placesDisplay" id="placesOutput">
+      <div class="place bg-light  ml-3 mb-3 rounded"></div>
+      <div class="place bg-light  ml-3 mb-3 rounded"></div>
+      <div class="place bg-light  ml-3 mb-3 rounded"></div>
+      <div class="place bg-light  ml-3 mb-3 rounded"></div>
+
     </div>
-    </div>
-
-    <!-- search output -->
-
-    <div class="col-md-4"></div>
 
 
     <!--BMI -->
 
     <div class="col-md-4">
       <h1> BMI Calculator </h1>
-      <form  action="/action_page.php">
-       
-        <input  type="text" id="bmi-age" name="age" placeholder="Enter Your Age">
+      <form action="/action_page.php">
 
-      
-        <input  type="text" id="bmi-weight" name="weight" placeholder="Enter your weight in Lbs ">
-        
+        <input type="text" id="bmi-age" name="age" placeholder="Enter Your Age">
+
+
+        <input type="text" id="bmi-weight" name="weight" placeholder="Enter your weight in Lbs ">
+
         <input type="text" id="bmi-height" name="height" placeholder="Enter your Height">
 
         <input type="text" id="bmi-result" name="BmiResult" placeholder="">
@@ -104,43 +117,34 @@
       <div class="row">
 
       </div>
-      <div class="row">
+
       <input type="submit" value="Submit" id="bmi-btn"> <input type="reset" value="Reset">
+
     </div>
-  </div>
+    <!-- bmi col ends -->
+
+
+    <div>
+      <!-- place and bmi row ends -->
 
 
 
+      <footer class="footer nav sticky-bottom justify-content-center">
+        Project 1 Group 4
+      </footer>
 
 
-  </div>
+      <!-- jQuery CDN -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-  </div>
-
-
-
-
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
+      <script src="./javascript.js"></script>
 
 
-
-
-  <footer class="footer nav sticky-bottom justify-content-center">
-    Project 1 Group 4
-</footer>
-
-
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"  src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    
-  <script src="./javascript.js"></script>  
-
-
-  <!-- Local Script -->
+      <!-- Local Script -->
 
 
 </body>

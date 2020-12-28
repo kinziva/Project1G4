@@ -1,144 +1,124 @@
+$(document).ready(function () {
+  //variables
+  const apiKey =
+    "client_id=X3VSLYNVJXHUU2SM3CEVP5YLSO4SHPVJDGBCUNSP554LFE3I&client_secret=P1M2Y1HRN23WODIQ4XZJ3ZRVSHOVHB0CUJQ5PK4A1V2VKHVD&v=20200101";
+
+  //find place with event listener submit button click
+  $("#place-btn").on("click", function (event) {
+    event.preventDefault();
+
+    placeFinder();
+
+  });
+
+  //place finder function creates the query and makes the api call 
+  function placeFinder() {
+    var city = $("#city").val();
+    console.log("city:    " + city);
+
+    var select = $("#inputGroupSelect02").val();
+
+    console.log("select:    " + select);
+
+    // queryURL for places API --by category id: "4bf58dd8d48988d175941735" Gym / Fitness Center
+    var queryURL =
+      "https://api.foursquare.com/v2/venues/search?" + apiKey + "&near=" + city +
+      "&intent=browse&query=" + select + "&categoryId=4bf58dd8d48988d175941735";
+
+    console.log("queryURL: " + queryURL);
+
+    //ajax
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
+
+      displayPlaces(response);
+
+    });
+  }
+
+  //displace places info
+  function displayPlaces(response) {
+    console.log(" in displayPlaces ");
+
+    console.log(response);
+    console.log(response.response);
+    console.log(response.response.venues);
+
+    const placeDisplay = document.querySelectorAll(".place");
+    console.log("place: count :  " + placeDisplay.length);
+
+    for (i = 0; i < placeDisplay.length; i++) {
+
+      placeDisplay[i].innerHTML = "";
+
+      // place name
+      var searchedPlaceName = document.createElement("p");
+      searchedPlaceName.setAttribute("class", "mt-3 mb-0 placeName");
+      searchedPlaceName.innerHTML = response.response.venues[i].name;
+      placeDisplay[i].append(searchedPlaceName);
 
 
-// Created by Hanna 12/15/2020
+      // place address
+      var searchedPlaceaddress = document.createElement("p");
+      searchedPlaceaddress.setAttribute("alt", "placeAddress");
+      searchedPlaceaddress.innerHTML = "Address: " + response.response.venues[i].location.formattedAddress;
+      placeDisplay[i].append(searchedPlaceaddress);
 
-$("#place-btn").on("click", function(event) {
-  // This line allows us to take advantage of the HTML "submit" property
-  // This way we can hit enter on the keyboard and it registers the search
-  // (in addition to clicks). Prevents the page from reloading on form submit.
-  event.preventDefault();
-
-  // Empty the region associated with the articles
-  // clear();
-
-  // Build the query URL for the ajax request to the NYT API
-  var queryURL = buildQueryURL();
-
-  // Make the AJAX request to the API - GETs the JSON data at the queryURL.
-  // The data then gets passed as an argument to the updatePage function
-  console.log("queryURL:  " + queryURL);
-
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
-
-
-    console.log("response:   " + JSON.stringify(response));
-
-    console.log("response.response:    " + JSON.stringify(response.response));
-
-
-   console.log("response.response.venues  " + JSON.stringify(response.response.venues));
-
-   console.log("response.response.venues[0]  " + JSON.stringify(response.response.venues[0]));
-
-   console.log("name:     " + JSON.stringify(response.response.venues[0].name));
-
-
-   console.log("adress:     " + JSON.stringify(response.response.venues[0].location.address));
-   console.log("city:     " + JSON.stringify(response.response.venues[0].location.city));
-   console.log("postalCode:     " + JSON.stringify(response.response.venues[0].location.postalCode));
-
-
-
-
-
-
-
-
-});
-});
-
-//   $("#clear-all").on("click", clear);
-
-//   function clear() {
-//     $("#search-section").empty();
-//   }
-
-//build QUERY url
-function buildQueryURL() {
-
-  // queryURL is the url we'll use to query the API
-  var queryURL ="https://api.foursquare.com/v2/venues/search?";
-
-  var queryParams = { "client_id": "X3VSLYNVJXHUU2SM3CEVP5YLSO4SHPVJDGBCUNSP554LFE3I" };
-  
-  queryParams.client_secret= "P1M2Y1HRN23WODIQ4XZJ3ZRVSHOVHB0CUJQ5PK4A1V2VKHVD";
-
-//select wellness place type from dropdown and search for it
-  // var selectWellness = $("#select-wellness")
-  // .val()
-  // .trim();
-  var selectWellness = $(this).attr("select-wellness");
-
-  queryParams.query = selectWellness;
-
-// get input city name
-      var city = $(this).attr("city-input");
-      // var city = $("#city-input")
-      // .val()
-      // .trim();
-
-      queryParams.near = city;
-//get the radius
-      // var radius = $("#radius-input")
-      // .val()
-      // .trim();
-      var radius = $(this).attr("radius-input");
-
-      queryParams.radius = radius;
-
-
-  // year
-  queryParams.v = "20200101"
-  queryParams.intent = "browse"
-
-
-  queryParams.limit = "10"
-
-  // console.log("queryParams:        " +$.param(queryParams));
-
-
-  // console.log("queryURL queryParams:     " + queryURL+ $.param(queryParams));
-
-  
-
-  // "https://api.foursquare.com/v2/venues/search?client_id=X3VSLYNVJXHUU2SM3CEVP5YLSO4SHPVJDGBCUNSP554LFE3I&client_secret=P1M2Y1HRN23WODIQ4XZJ3ZRVSHOVHB0CUJQ5PK4A1V2VKHVD
-  // &near=fairfax&intent=browse&radius=50&query=yoga studio&limit=10&v=20200101";
-
-
-    // Logging the URL so we have access to it for troubleshooting
-//   console.log("---------------\nURL: " + queryURL + "\n---------------");
-//   console.log("---------------\nURL with params: " + queryURL + $.param(queryParams));
-//   return queryURL + $.param(queryParams);
-return "https://api.foursquare.com/v2/venues/search?client_id=X3VSLYNVJXHUU2SM3CEVP5YLSO4SHPVJDGBCUNSP554LFE3I&client_secret=P1M2Y1HRN23WODIQ4XZJ3ZRVSHOVHB0CUJQ5PK4A1V2VKHVD&near=fairfax&intent=browse&radius=50&query=yoga studio&limit=10&v=20200101";
-
-}
-
-$("#bmi-btn").on("click", function(event) {
-  event.preventDefault();
-  bmiCalculator();
-// bmi calculator
-function bmiCalculator() {
-  var age = $("#bmi-age").val();
-  var weight = $("#bmi-weight").val();
-  var height = $("#bmi-height").val();
-  console.log(age,weight,height);
-  // queryURL for bmi API 
-  var queryURLBmi = "https://fitness-calculator.p.rapidapi.com/bmi?age="+age+"&weight="+weight+"&height="+height;
-  //ajax 
-  $.ajax({
-    url: queryURLBmi,
-    method: "GET",
-    headers: {
-      "x-rapidapi-key": "6d01ea40d8msh0e3a90c20c5f4e7p1a74a4jsn9c524a72b90a",
-      "x-rapidapi-host": "fitness-calculator.p.rapidapi.com"
     }
-  }).then(function(response) {
-      console.log(response);
 
-});
-}
 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    // following items not common for all places not in use for now
+
+    // place city
+    //   var searchedPlaceCity = document.createElement("p");
+    //   searchedPlaceCity.text = " City: " +response.response.venues[0].location.city;
+    //   placeDisplay.append(searchedPlaceCity);
+
+    //  // place state
+    //   var searchedPlaceState= document.createElement("p");
+    //   searchedPlaceState.innerHTML =" State: " +response.response.venues[0].location.state;
+    //   placeDisplay.append(searchedPlaceState);
+
+    //    // place zip
+    //   var searchedPlaceZIP = document.createElement("p");
+    //   searchedPlaceZIP.innerHTML = " PostalCode: "+ response.response.venues[0].location.postalCode;
+    //   placeDisplay.append(searchedPlaceZIP);
+
+  }
+
+  //BMI Calculator
+  $("#bmi-btn").on("click", function (event) {
+    event.preventDefault();
+    bmiCalculator();
+    // bmi calculator
+    function bmiCalculator() {
+      var age = $("#bmi-age").val();
+      var weight = $("#bmi-weight").val();
+      var height = $("#bmi-height").val();
+      console.log(age, weight, height);
+      // queryURL for bmi API
+      var queryURLBmi =
+        "https://fitness-calculator.p.rapidapi.com/bmi?age=" +
+        age +
+        "&weight=" +
+        weight +
+        "&height=" +
+        height;
+      //ajax
+      $.ajax({
+        url: queryURLBmi,
+        method: "GET",
+        headers: {
+          "x-rapidapi-key":
+            "6d01ea40d8msh0e3a90c20c5f4e7p1a74a4jsn9c524a72b90a",
+          "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+        },
+      }).then(function (response) {
+        console.log(response);
+      });
+    }
+  });
 });
