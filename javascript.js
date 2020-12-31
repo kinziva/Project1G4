@@ -96,8 +96,8 @@ $(document).ready(function () {
     // bmi calculator
     function bmiCalculator() {
       var age = $("#bmi-age").val();
-      var weight = $("#bmi-weight").val();
-      var height = $("#bmi-height").val();
+      var weight = $("#bmi-weight").val() * 0.45;
+      var height = $("#bmi-height").val() * 30.48;
       console.log(age, weight, height);
       // queryURL for bmi API
       var queryURLBmi =
@@ -117,8 +117,20 @@ $(document).ready(function () {
           "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
         },
       }).then(function (response) {
-        console.log(response);
+        //display bmi information 
+        bmiResult = response.bmi.toFixed(2);
+        category = response.health;
+        $("#bmi-result").text("Your BMI is " + bmiResult + ", indicating your weight is in the " + category + " category for people of your height. ")
+        console.log(response); 16
       });
     }
+  });
+  // bmi section reset button click function
+  $("#bmi-reset").on("click", function (event) {
+    event.preventDefault();
+    $("#bmi-result").empty();
+    $("#bmi-age").val("");
+    $("#bmi-height").val("");
+    $("#bmi-weight").val("");
   });
 });
