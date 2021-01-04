@@ -132,10 +132,16 @@ h1{
 
 }  
 p {
-text-align: center;
+text-align: left;
 color :rgb(0, 195, 255);
 font-size : 20px
 }
+
+#titlepage {
+  text-align: center;
+  color :rgb(0, 195, 255);
+  font-size : 20px
+  }
 
 h2{
   text-align: center;
@@ -239,3 +245,10 @@ color: black;
   100% {opacity:1;}
 
 
+  }
+  #bmi-result {
+color:rgb(0, 195, 255) ;
+font-size: 25px;
+
+
+  }
