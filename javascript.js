@@ -88,7 +88,12 @@ $(document).ready(function () {
     function bmiCalculator() {
       var age = $("#bmi-age").val();
       var weight = $("#bmi-weight").val() * 0.45;
-      var height = $("#bmi-height").val() * 30.48;
+      var heightFeet = $("#bmi-height-feet").val();
+      console.log(heightFeet);
+      var heightInches = $("#bmi-height-inches").val();
+      console.log(heightInches);
+      var height=(parseInt(heightFeet*12)+parseInt(heightInches))*2.54;
+      console.log(height);
       console.log(age, weight, height);
       // queryURL for bmi API
       var queryURLBmi =
@@ -128,7 +133,8 @@ $(document).ready(function () {
     event.preventDefault();
     $("#bmi-result").empty();
     $("#bmi-age").val("");
-    $("#bmi-height").val("");
+    $("#bmi-height-feet").val("");
+    $("#bmi-height-inches").val("");
     $("#bmi-weight").val("");
   });
 });

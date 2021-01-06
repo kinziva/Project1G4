@@ -119,12 +119,13 @@
       <h1> BMI Calculator </h1>
       <form action="/action_page.php">
 
-        <input type="text" id="bmi-age" name="age" placeholder="Enter Your Age">
+        <label for="age" class="form-label">Age</label><input type="text" id="bmi-age" name="age" placeholder="Enter Your Age">
 
 
-        <input type="text" id="bmi-weight" name="weight" placeholder="Enter your weight in Lbs ">
+        <label for="weight"class="form-label">Weight</label><input type="text" id="bmi-weight" name="weight" placeholder="Enter your weight in Lbs ">
 
-        <input type="text" id="bmi-height" name="height" placeholder="Enter your Height in Feet">
+        <label for="height" class="form-label">Height</label><input type="text" id="bmi-height-feet" name="height" placeholder="Feet">
+        <input type="text" id="bmi-height-inches" name="height" placeholder="Inches">
 
         <div  id="bmi-result"></div>
 
