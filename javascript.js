@@ -2,6 +2,7 @@ $(document).ready(function () {
   //variables
   const apiKey =
     "client_id=X3VSLYNVJXHUU2SM3CEVP5YLSO4SHPVJDGBCUNSP554LFE3I&client_secret=P1M2Y1HRN23WODIQ4XZJ3ZRVSHOVHB0CUJQ5PK4A1V2VKHVD&v=20200101";
+    const placeDisplay = document.querySelectorAll(".place");
 
   //find place with event listener submit button click
   $("#place-btn").on("click", function (event) {
@@ -48,7 +49,6 @@ $(document).ready(function () {
     console.log(response.response);
     console.log(response.response.venues);
 
-    const placeDisplay = document.querySelectorAll(".place");
     console.log("place: count :  " + placeDisplay.length);
 
     for (i = 0; i < placeDisplay.length; i++) {
@@ -74,8 +74,10 @@ $(document).ready(function () {
     event.preventDefault();
     $("#city").val("");
     $("#inputGroupSelect02").val("");
-    
-    // $("#placesOutput").empty();
+    for (i = 0; i < placeDisplay.length; i++) {
+      placeDisplay[i].innerHTML = "";
+    }
+ 
   });
 
   //BMI Calculator
