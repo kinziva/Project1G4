@@ -94,11 +94,7 @@ label {
   clear: both;
 }
 #bmi-height-inches, #bmi-height-feet{
-  width:40%;
-}
-
-#bmi-height-feet{
-margin-left:20px;
+  width:30%;
 }
 
 
