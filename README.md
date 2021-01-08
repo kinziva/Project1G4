@@ -21,9 +21,9 @@ Epidemic sounds
 # Known bugs
 There are no known bugs
 # Project Mockup:
-![mock up](./assets/mockup1.png)
-![mock up](./assets/mockup2.png)
-![mock up](./assets/mockup3.png)
+![Home Page Screenshot](./assets/appHome.JPG)
+![Places and Bmi function Screenshot](./assets/APIplacesBmi.JPG)
+
 # Team members and responsibilities:
 Hanna: Group leader, Postman, Javascript, Foursquare API
 Menuka: html, Material UI, CSS, music
